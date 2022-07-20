@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: cangeles
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/cangeles-harbor-project/app@sha256:a68564a13a99b0711a43f4a9a6760bd997aa27eff898716a27bb7c093bfc1592
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/cangeles-harbor-project/db@sha256:9fa40d6cfc2fc2b2184f029b8dd1ad20acfa3acaafd7eaa220be92b68acf862b
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
