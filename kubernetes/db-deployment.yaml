@@ -23,6 +23,6 @@ spec:
         - secretRef:
             name: db-secret
         name: db-deployment
-        image: harbor.dev.afsmtddso.com/cangeles-harbor-project/db@sha256:9fa40d6cfc2fc2b2184f029b8dd1ad20acfa3acaafd7eaa220be92b68acf862b
+        image: harbor.dev.afsmtddso.com/cangeles-harbor-project/db@sha256:84c5ec18c87243cd3527e3db92a2a9526501fdd44aa862e81764231c2de8bbc5
         ports:
         - containerPort: 5432
